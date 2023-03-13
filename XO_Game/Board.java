@@ -37,12 +37,11 @@ public class Board {
         return false;
    }
     public void Drwa(){
-    for(int i = 0; i < 3; i++){
-        int row = getRow(i);
+    for(int i = 0; i < size; i++){
     System.out.println("-------------");
-        for(int j = 0; j < 3; j++){
-            int colum = getColum(j);
-            System.out.print("| "+ board[i][j] +" ");
+        for(int j = 0; j < size; j++){
+            symbolsCnt++;
+            System.out.print("| "+ symbolsCnt +" ");
         }
         System.out.println("|");
     }
@@ -50,7 +49,7 @@ public class Board {
 }
 public boolean playerMove(Player p, int position)
     {
-
+        symbolsCnt = 0;
         int row = getRow(position);
         int col = getColum(position);
         if(board[row][col] == 'X' || board[row][col] == 'O') {
